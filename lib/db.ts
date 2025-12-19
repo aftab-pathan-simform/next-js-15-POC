@@ -191,6 +191,19 @@ export function initializeDatabase() {
 
   globalForDb.isDbInitialized = true;
   console.log('Database initialized with', teams.size, 'teams and', players.size, 'players');
+  
+  // Auto-create a demo auction for production/demo purposes
+  if (process.env.NODE_ENV === 'production' || process.env.NEXT_PUBLIC_AUTO_CREATE_AUCTION === 'true') {
+    const unsoldPlayers = Array.from(players.values()).filter(p => p.status === 'Unsold');
+    if (unsoldPlayers.length > 0) {
+      // Create a demo auction with Virat Kohli (or first unsold player)
+      const demoPlayer = unsoldPlayers.find(p => p.name === 'Virat Kohli') || unsoldPlayers[0];
+      const demoAuction = createAuction(demoPlayer.id, 300); // 5 minute timer for demo
+      if (demoAuction) {
+        console.log('✅ Auto-created demo auction:', demoAuction.id, 'for player:', demoPlayer.name);
+      }
+    }
+  }
 }
 
 // Team operations
