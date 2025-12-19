@@ -16,7 +16,7 @@ export default function AuctionNotFound() {
         <CardContent className="space-y-6">
           <div className="space-y-3">
             <p className="text-lg">
-              The auction you're looking for doesn't exist or has been removed.
+              The auction you&apos;re looking for doesn&apos;t exist or has been removed.
             </p>
             <p className="text-muted-foreground">
               This might happen because:
