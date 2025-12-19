@@ -1,6 +1,6 @@
 // Dashboard Metric Card - Server Component
 // Demonstrates Server Components for data fetching
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { randomDelay } from '@/lib/utils';
 import { LucideIcon } from 'lucide-react';
 

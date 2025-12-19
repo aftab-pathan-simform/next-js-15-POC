@@ -1,7 +1,7 @@
 // Utility script to create a test auction
 // Run with: node --loader ts-node/esm scripts/create-auction.ts
 
-import { createAuction, getAllPlayers, getPlayersByStatus } from '../lib/db';
+import { createAuction, getPlayersByStatus } from '../lib/db';
 
 // Create a test auction
 function createTestAuction() {
